@@ -21,6 +21,8 @@ func (s *ParkingSpot) IsFree() bool {
 
 func (s *ParkingSpot) CanFit(vType VehicleType) bool {
 	return s.IsFree() && s.Type == vType
+	// Let a bike park in a car spot if bike spots are full.
+	// To support this you can return s.IsFree() && s.Type >= vType
 }
 
 func (s *ParkingSpot) Park(v *Vehicle) {
